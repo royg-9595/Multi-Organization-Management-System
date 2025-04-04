@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2025-04-03T11:44:30Z"
+  labels:
+    app: multi-user-app
+  name: multi-user-app
+  namespace: default
+  resourceVersion: "167973"
+  uid: 7785ec92-8b2c-4bfe-bfc5-928a6f6d6385
+spec:
+  clusterIP: 10.104.59.177
+  clusterIPs:
+  - 10.104.59.177
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31394
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: multi-user-app
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
